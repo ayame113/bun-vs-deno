@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "serve": "deno run --allow-net --unstable ./bench.ts"
+    "serve": "deno run --allow-net --allow-run --unstable ./bench.ts"
   }
 }
