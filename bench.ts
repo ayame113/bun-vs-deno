@@ -1,9 +1,11 @@
 import { delay } from "https://deno.land/std@0.156.0/async/delay.ts";
 const commands = [
-  ["deno", "run", "--allow-net", "--unstable", "deno.ts"],
+  ["deno", "run", "-A", "--unstable", "deno.ts"],
+  ["bun", "run", "bun.ts"],
 ];
 
 for (const command of commands) {
+  console.log(command);
   const server = new AbortController();
   Deno.spawn(command[0], {
     args: command.slice(1),
