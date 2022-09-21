@@ -11,14 +11,11 @@ for (const command of commands) {
     stdout: "inherit",
     stderr: "inherit",
   });
-  await delay(1000);
-  const benchmark = Deno.spawn("./oha-linux-amd64", {
+  await delay(5000);
+  await Deno.spawn("./oha-linux-amd64", {
     args: ["-j", "--no-tui", "http://127.0.0.1:9000/"],
     stdout: "inherit",
     stderr: "inherit",
   });
-  await benchmark.then((bench) => {
-    console.log(bench.success);
-    server.abort();
-  });
+  server.abort();
 }
