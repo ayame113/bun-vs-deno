@@ -3,8 +3,10 @@ const commands = [
 ];
 
 for (const command of commands) {
-  const benchmark = Deno.spawn("oha", {
+  const benchmark = Deno.spawn("oha-linux-amd64", {
     args: ["-j", "--no-tui", "http://localhost:9000/"],
+    stdout: "inherit",
+    stderr: "inherit",
   });
   const server = new AbortController();
   Deno.spawn(command[0], {
