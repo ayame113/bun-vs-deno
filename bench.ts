@@ -15,9 +15,10 @@ for (const command of commands) {
   });
   await delay(5000);
   await Deno.spawn("./oha-linux-amd64", {
-    args: ["-j", "--no-tui", "http://127.0.0.1:9000/"],
+    args: ["-j", "--no-tui", "http://127.0.0.1:8000/"],
     stdout: "inherit",
     stderr: "inherit",
   });
   server.abort();
+  console.log("");
 }
