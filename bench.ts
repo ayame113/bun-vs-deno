@@ -7,9 +7,11 @@ for (const command of commands) {
   Deno.spawn(command[0], {
     args: command.slice(1),
     signal: server.signal,
+    stdout: "inherit",
+    stderr: "inherit",
   });
   const benchmark = Deno.spawn("./oha-linux-amd64", {
-    args: ["-j", "--no-tui", "http://localhost:9000/"],
+    args: ["-j", "--no-tui", "http://127.0.0.1:9000/"],
     stdout: "inherit",
     stderr: "inherit",
   });
