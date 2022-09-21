@@ -24,6 +24,6 @@ jobs:
       #    crate: oha
       #    version: 0.5.4
       - name: change permission
-        uses: chmod 777 ./oha-linux-amd64
+        run: chmod 777 ./oha-linux-amd64
       - name: Run Benchmark
         run: deno task serve
