@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "serve": "deno eval \"console.log(1)\""
+    "serve": "deno run --allow-net --unstable ./bench.ts"
   }
 }
