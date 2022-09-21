@@ -1,0 +1,27 @@
+name: bench
+
+on:
+  #schedule:
+  #  - cron: 0 0 * * *
+  push:
+
+jobs:
+  hello_bench:
+    name: 'Hello, bench!'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Deno
+        uses: denoland/setup-deno@v1
+      - name: Install Node
+        uses: actions/setup-node@v3
+      - name: Install Bun
+        uses: antongolub/action-setup-bun@v1.4.0
+      - name: Install Oha
+        uses: actions-rs/install@v0.1
+        with:
+          crate: oha
+          version: 0.5.4
+      - name: Run Benchmark
+        run: deno task serve
