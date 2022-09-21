@@ -4,7 +4,7 @@ const commands = [
 
 for (const command of commands) {
   const benchmark = Deno.spawn("oha", {
-    args: ["-j", "--no-tui"],
+    args: ["-j", "--no-tui", "http://localhost:9000/"],
   });
   const server = new AbortController();
   Deno.spawn(command[0], {
