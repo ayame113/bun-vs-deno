@@ -1,5 +1,5 @@
 const commands = [
-  ["deno", "run", "--unstable", "deno.ts"],
+  ["deno", "run", "--allow-net", "--unstable", "deno.ts"],
 ];
 
 for (const command of commands) {
