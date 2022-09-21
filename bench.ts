@@ -29,7 +29,7 @@ for (const command of commands) {
     stdout: "inherit",
     stderr: "inherit",
   });
-  await delay(5000);
+  await delay(10000);
   await Deno.spawn(bench[0], {
     args: bench.slice(1),
     stdout: "inherit",
