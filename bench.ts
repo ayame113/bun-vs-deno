@@ -17,7 +17,7 @@ const bench = [
   "-t12",
   "-c400",
   "-d30s",
-  "http://127.0.0.1:8080/",
+  "http://127.0.0.1:8000/",
 ];
 
 for (const command of commands) {
