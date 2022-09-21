@@ -25,6 +25,8 @@ jobs:
       #  with:
       #    crate: oha
       #    version: 0.5.4
+      - name: Install wrk
+        run: brew install wrk
       - name: change permission
         run: chmod 777 ./oha-linux-amd64
       - name: Run Benchmark

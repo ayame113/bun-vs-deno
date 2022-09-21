@@ -4,6 +4,22 @@ const commands = [
   ["bun", "run", "bun.ts"],
 ];
 
+// const bench = [
+//   "./oha-linux-amd64",
+//   "-j",
+//   "-n",
+//   "10000",
+//   "--no-tui",
+//   "http://127.0.0.1:8000/",
+// ];
+const bench = [
+  "wrk",
+  "-t12",
+  "-c400",
+  "-d30s",
+  "http://127.0.0.1:8080/",
+];
+
 for (const command of commands) {
   console.log(command);
   const server = new AbortController();
@@ -14,8 +30,8 @@ for (const command of commands) {
     stderr: "inherit",
   });
   await delay(5000);
-  await Deno.spawn("./oha-linux-amd64", {
-    args: ["-j", "-n", "10000", "--no-tui", "http://127.0.0.1:8000/"],
+  await Deno.spawn(bench[0], {
+    args: bench.slice(1),
     stdout: "inherit",
     stderr: "inherit",
   });
