@@ -11,7 +11,8 @@ for (const command of commands) {
     args: command.slice(1),
     signal: server.signal,
   });
-  await benchmark.then(() => {
+  await benchmark.then((bench) => {
+    console.log(bench.success);
     server.abort();
   });
 }
