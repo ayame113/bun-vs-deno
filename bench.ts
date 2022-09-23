@@ -15,8 +15,8 @@ const commands = [
 const bench = [
   "wrk",
   // "-t12",
-  "-c",
-  "400",
+  // "-c",
+  // "400",
   "-d",
   "20s",
   "http://127.0.0.1:8000/",
@@ -43,5 +43,6 @@ for (const command of commands) {
     stdout: "inherit",
     stderr: "inherit",
   });
+  console.log("");
   server.abort();
 }
