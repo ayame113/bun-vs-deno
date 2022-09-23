@@ -1,6 +1,6 @@
 import { delay } from "https://deno.land/std@0.156.0/async/delay.ts";
 const commands = [
-  ["deno", "run", "-A", "--unstable", "deno.js"],
+  ["deno", "run", "--allow-all", "--unstable", "deno.js"],
   ["bun", "run", "bun.js"],
 ];
 
@@ -10,7 +10,7 @@ const commands = [
 //   "-n",
 //   "10000",
 //   "--no-tui",
-//   "http://127.0.0.1:8000/",
+//   "http://127.0.0.1:4544/",
 // ];
 const bench = [
   "wrk",
@@ -20,7 +20,7 @@ const bench = [
   "-d",
   "20s",
   "--latency",
-  "http://127.0.0.1:8000/",
+  "http://127.0.0.1:4544/",
 ];
 
 for (const command of commands) {
@@ -39,9 +39,9 @@ for (const command of commands) {
     stdout: "inherit",
     stderr: "inherit",
   });
-  console.log(["curl", "-i", "-s", "http://127.0.0.1:8000/"]);
+  console.log(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
   await Deno.spawn("curl", {
-    args: ["-i", "-s", "http://127.0.0.1:8000/"],
+    args: ["-i", "-s", "http://127.0.0.1:4544/"],
     stdout: "inherit",
     stderr: "inherit",
   });

@@ -1,5 +1,5 @@
 export default {
-  port: 8000,
+  port: 4544,
   fetch(req) {
     return new Response("Hello world!", {
       headers: { "Date": new Date().toUTCString() },
