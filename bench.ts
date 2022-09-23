@@ -37,6 +37,11 @@ for (const command of commands) {
     stdout: "inherit",
     stderr: "inherit",
   });
+  await Deno.spawn("curl", {
+    args: ["-i", "-s", "http://127.0.0.1:8000/"],
+    stdout: "inherit",
+    stderr: "inherit",
+  });
   server.abort();
   console.log("");
 }
