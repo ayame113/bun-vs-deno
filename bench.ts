@@ -24,6 +24,7 @@ const bench = [
 ];
 
 for (const command of commands) {
+  console.log("=".repeat(30));
   console.log(command);
   const server = new AbortController();
   Deno.spawn(command[0], {
