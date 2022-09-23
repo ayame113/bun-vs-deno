@@ -1,6 +1,6 @@
 export default {
   port: 8000,
-  fetch() {
+  fetch(req) {
     return new Response("Hello world!" + Math.random(), {
       headers: { "Date": new Date().toUTCString() },
     });
