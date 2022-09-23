@@ -8,7 +8,7 @@ on:
 jobs:
   hello_bench:
     name: 'bench'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04-xl
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
