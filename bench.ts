@@ -6,7 +6,7 @@ const commands = [
 
 const bench = [
   "./oha-linux-amd64",
-  "-j",
+  // "-j",
   "-n",
   "10000",
   "--no-tui",
