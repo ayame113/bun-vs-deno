@@ -1,4 +1,4 @@
-Deno.serve((req) => new Response("Hello world!" + Math.random()), {
+Deno.serve((req) => new Response("Hello world!"), {
   port: 8000,
 });
 // Deno.serve(
