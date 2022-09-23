@@ -1,7 +1,7 @@
 import { delay } from "https://deno.land/std@0.156.0/async/delay.ts";
 const commands = [
-  ["deno", "run", "-A", "--unstable", "deno.ts"],
-  ["bun", "run", "bun.ts"],
+  ["deno", "run", "-A", "--unstable", "deno.js"],
+  ["bun", "run", "bun.js"],
 ];
 
 // const bench = [
