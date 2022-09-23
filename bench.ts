@@ -4,24 +4,24 @@ const commands = [
   ["bun", "run", "bun.js"],
 ];
 
-const bench = [
-  "./oha-linux-amd64",
-  // "-j",
-  "-n",
-  "100000",
-  "--no-tui",
-  "http://127.0.0.1:4544/",
-];
 // const bench = [
-//   "wrk",
-//   // "-t12",
-//   // "-c",
-//   // "400",
-//   "-d",
-//   "20s",
-//   "--latency",
+//   "./oha-linux-amd64",
+//   // "-j",
+//   "-n",
+//   "100000",
+//   "--no-tui",
 //   "http://127.0.0.1:4544/",
 // ];
+const bench = [
+  "wrk",
+  // "-t12",
+  // "-c",
+  // "400",
+  "-d",
+  "20s",
+  "--latency",
+  "http://127.0.0.1:4544/",
+];
 
 for (const command of commands) {
   console.log("=".repeat(30));
@@ -29,8 +29,8 @@ for (const command of commands) {
   await delay(10000);
   await run(bench);
   await run(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
-  console.log("");
   server.kill();
+  console.log("");
 }
 
 function run(args: string[]) {
