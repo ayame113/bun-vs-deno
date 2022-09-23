@@ -25,26 +25,27 @@ const bench = [
 
 for (const command of commands) {
   console.log("=".repeat(30));
-  console.log(command);
-  const server = new AbortController();
-  Deno.spawn(command[0], {
-    args: command.slice(1),
-    signal: server.signal,
-    stdout: "inherit",
-    stderr: "inherit",
-  });
+  const server = run(command);
   await delay(10000);
-  await Deno.spawn(bench[0], {
-    args: bench.slice(1),
-    stdout: "inherit",
-    stderr: "inherit",
-  });
-  console.log(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
-  await Deno.spawn("curl", {
-    args: ["-i", "-s", "http://127.0.0.1:4544/"],
-    stdout: "inherit",
-    stderr: "inherit",
-  });
+  await run(bench);
+  await run(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
   console.log("");
-  server.abort();
+  server.kill();
+}
+
+function run(args: string[]) {
+  console.log(args);
+  const ac = new AbortController();
+  const p = Deno.spawn(args[0], {
+    args: args.slice(1),
+    stdout: "inherit",
+    stderr: "inherit",
+    signal: ac.signal,
+  });
+  return {
+    then: p.then.bind(p),
+    kill() {
+      ac.abort();
+    },
+  };
 }
