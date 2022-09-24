@@ -26,7 +26,6 @@ const bench = [
 for (const command of commands) {
   console.log("=".repeat(30));
   const server = run(command);
-  console.log(server);
   await delay(10000);
   await run(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
   console.log("");
@@ -46,7 +45,6 @@ function run(args: string[]) {
   return {
     then: p.then.bind(p),
     kill() {
-      console.log("server kill");
       ac.abort();
     },
   };
