@@ -45,6 +45,7 @@ function run(args: string[]) {
   return {
     then: p.then.bind(p),
     kill() {
+      console.log("server kill");
       ac.abort();
     },
   };
