@@ -27,10 +27,10 @@ for (const command of commands) {
   console.log("=".repeat(30));
   const server = run(command);
   await delay(10000);
-  await run(bench);
   await run(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
-  server.kill();
   console.log("");
+  await run(bench);
+  server.kill();
 }
 
 function run(args: string[]) {
