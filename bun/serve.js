@@ -8,7 +8,7 @@ console.log({
   __dirname,
 });
 console.log({ "import.meta": import.meta });
-console.log({ "import.meta.prototype": import.meta.prototype });
+console.log({ "import.meta.prototype": Object.getPrototypeOf(import.meta) });
 export default {
   port: 4544,
   fetch(req) {
