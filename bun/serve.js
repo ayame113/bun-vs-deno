@@ -1,5 +1,6 @@
 console.log(import.meta.resolve("../index.html"));
 console.log(await import.meta.resolve("../index.html"));
+console.log(import.meta.resolveSync("../index.html"));
 
 // console.log(__dirname);
 // // mistypeVariable = 17;

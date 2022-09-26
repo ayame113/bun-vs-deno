@@ -31,7 +31,7 @@ for (const { dir, command } of commands) {
     if (!file.isFile) {
       continue;
     }
-    console.log("=".repeat(30));
+    console.log("=".repeat(100));
 
     const server = run([...command, file.path]);
 
