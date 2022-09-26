@@ -1,3 +1,5 @@
+console.log({ "import.meta.prototype": Object.getPrototypeOf(import.meta) });
+
 Deno.serve((req) => new Response("Hello world!"), {
   port: 4544,
 });
