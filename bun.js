@@ -1,3 +1,5 @@
+console.log(__dirname);
+
 export default {
   port: 4544,
   fetch(req) {
