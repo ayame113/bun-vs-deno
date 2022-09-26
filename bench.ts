@@ -21,7 +21,7 @@ const bench = [
 ];
 
 const commands = [
-  { dir: "node", command: ["node"] },
+  { dir: "node", command: ["node", "--experimental-import-meta-resolve"] },
   { dir: "deno", command: ["deno", "run", "--allow-all", "--unstable"] },
   { dir: "bun", command: ["bun", "run"] },
 ];
