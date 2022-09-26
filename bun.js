@@ -1,5 +1,5 @@
 console.log(__dirname);
-
+mistypeVariable = 17;
 export default {
   port: 4544,
   fetch(req) {
