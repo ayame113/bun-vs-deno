@@ -1,6 +1,12 @@
 console.log(__dirname);
 // mistypeVariable = 17;
-console.log(require, exports, module.exports, __filename, __dirname);
+console.log({
+  require,
+  exports,
+  "module.exports": module.exports,
+  __filename,
+  __dirname,
+});
 export default {
   port: 4544,
   fetch(req) {
