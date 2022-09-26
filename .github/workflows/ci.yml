@@ -19,8 +19,8 @@ jobs:
         uses: actions/setup-node@v3
       - name: Install Bun
         uses: antongolub/action-setup-bun@v1.4.0
-        with:
-          bun-version: 0.1.10
+        # with:
+        #   bun-version: 0.1.10
       #- name: Install Oha
       #  uses: actions-rs/install@v0.1
       #  with:
