@@ -1,8 +1,5 @@
 import { delay } from "https://deno.land/std@0.156.0/async/delay.ts";
-const commands = [
-  ["deno", "run", "--allow-all", "--unstable", "deno.js"],
-  ["bun", "run", "bun.js"],
-];
+import { expandGlob } from "https://deno.land/std@0.157.0/fs/mod.ts";
 
 // const bench = [
 //   "./oha-linux-amd64",
@@ -23,14 +20,28 @@ const bench = [
   "http://127.0.0.1:4544/",
 ];
 
-for (const command of commands) {
-  console.log("=".repeat(30));
-  const server = run(command);
-  await delay(10000);
-  await run(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
-  console.log("");
-  await run(bench);
-  server.kill();
+const commands = [
+  { dir: "node", command: ["node"] },
+  { dir: "deno", command: ["deno", "run", "--allow-all", "--unstable"] },
+  { dir: "bun", command: ["bun", "run"] },
+];
+
+for (const { dir, command } of commands) {
+  for await (const file of expandGlob(`./${dir}/**`)) {
+    if (!file.isFile) {
+      continue;
+    }
+    console.log("=".repeat(30));
+
+    const server = run([...command, file.path]);
+
+    await delay(10000);
+    await run(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
+    console.log("");
+    await run(bench);
+
+    server.kill();
+  }
 }
 
 function run(args: string[]) {
