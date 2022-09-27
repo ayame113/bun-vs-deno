@@ -23,7 +23,7 @@ jobs:
         #   bun-version: 0.1.10
       - name: Install workerd
         run: sudo npm install workerd
-      - run: chmod 777 ./node_modules/@cloudflare/workerd-linux-64/bin/workerd --help
+      - run: chmod 777 ./node_modules/@cloudflare/workerd-linux-64/bin/workerd
       - run: ./node_modules/@cloudflare/workerd-linux-64/bin/workerd --help
       #- name: Install Oha
       #  uses: actions-rs/install@v0.1
