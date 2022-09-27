@@ -1,6 +1,7 @@
 console.log("hello from workerd");
 
-console.log(globalThis);
+console.log(Object.getOwnPropertyNames(globalThis));
+console.log(Object.getOwnPropertySymbols(globalThis));
 // addEventListener("fetch", (event) => {
 //   event.respondWith(handle(event.request));
 // });
