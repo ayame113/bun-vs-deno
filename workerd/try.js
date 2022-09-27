@@ -65,7 +65,7 @@ console.log(globalThis.undefined);
 // console.log(globalThis.isNaN);
 console.log(globalThis.console);
 console.log(globalThis.navigator);
-console.log(globalThis.origin);
+// console.log(globalThis.origin); // it will throw
 console.log(globalThis.scheduler);
 // console.log(globalThis.caches);
 // console.log(globalThis.crypto);
