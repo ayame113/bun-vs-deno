@@ -25,11 +25,13 @@ jobs:
         run: sudo npm install workerd
       - run: chmod 777 ./node_modules/@cloudflare/workerd-linux-64/bin/workerd
       - run: ./node_modules/@cloudflare/workerd-linux-64/bin/workerd help serve
+      - run: pwd
       #- name: Install Oha
       #  uses: actions-rs/install@v0.1
       #  with:
       #    crate: oha
       #    version: 0.5.4
+      - run: echo "$(pwd)node_modules/@cloudflare/workerd-linux-64/bin/workerd"
       - run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
       - name: Install wrk
         run: brew install wrk
