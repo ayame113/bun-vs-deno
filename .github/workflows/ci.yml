@@ -21,6 +21,9 @@ jobs:
         uses: antongolub/action-setup-bun@v1.4.0
         # with:
         #   bun-version: 0.1.10
+      - name: Install workerd
+        run: npm install workerd
+      - run: ls -al
       #- name: Install Oha
       #  uses: actions-rs/install@v0.1
       #  with:
