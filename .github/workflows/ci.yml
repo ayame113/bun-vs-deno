@@ -24,7 +24,7 @@ jobs:
       - name: Install workerd
         run: npm install workerd
       # - run: ls -al
-      - run: npx workerd --help
+      - run: sudo npx workerd --help
       #- name: Install Oha
       #  uses: actions-rs/install@v0.1
       #  with:
