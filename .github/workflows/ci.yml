@@ -25,7 +25,7 @@ jobs:
         run: sudo npm install workerd
       - run: chmod 777 ./node_modules/@cloudflare/workerd-linux-64/bin/workerd
       - run: echo "$(pwd)/node_modules/@cloudflare/workerd-linux-64/bin/" >> $GITHUB_PATH
-      - run: workerd serve ./workerd/try.capnp
+      - run: workerd serve --verbose ./workerd/try.capnp
       #- name: Install Oha
       #  uses: actions-rs/install@v0.1
       #  with:
