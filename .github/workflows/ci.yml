@@ -22,7 +22,7 @@ jobs:
         # with:
         #   bun-version: 0.1.10
       - name: Install workerd
-        run: npm install workerd
+        run: sudo npm install workerd
       # - run: ls -al
       - run: sudo npx workerd --help
       #- name: Install Oha
