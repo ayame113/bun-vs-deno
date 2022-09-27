@@ -24,7 +24,7 @@ jobs:
       - name: Install workerd
         run: sudo npm install workerd
       - run: chmod 777 ./node_modules/@cloudflare/workerd-linux-64/bin/workerd
-      - run: ./node_modules/@cloudflare/workerd-linux-64/bin/workerd --help
+      - run: ./node_modules/@cloudflare/workerd-linux-64/bin/workerd help serve
       #- name: Install Oha
       #  uses: actions-rs/install@v0.1
       #  with:
