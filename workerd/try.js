@@ -75,4 +75,6 @@ console.log(Object.getOwnPropertyNames(globalThis.scheduler));
 // console.log(globalThis.WebAssembly);
 // console.log(globalThis.ServiceWorkerGlobalScope);
 console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(globalThis)));
-throw new Error("end");
+
+console.log(navigator.userAgent);
+throw new Error("end of script");
