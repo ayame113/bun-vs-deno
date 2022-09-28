@@ -90,11 +90,17 @@ console.log(navigator.userAgent);
 // console.log(globalThis.structuredClone);
 // console.log(globalThis.fetch);
 // console.log(globalThis.Event);
-console.log("ExtendableEvent", Object.getOwnPropertyNames(ExtendableEvent));
+console.log(
+  "ExtendableEvent",
+  Object.getOwnPropertyNames(ExtendableEvent.prototype),
+);
 // console.log(globalThis.PromiseRejectionEvent);
 // console.log(globalThis.FetchEvent);
-console.log("TraceEvent", Object.getOwnPropertyNames(TraceEvent));
-console.log("ScheduledEvent", Object.getOwnPropertyNames(ScheduledEvent));
+console.log("TraceEvent", Object.getOwnPropertyNames(TraceEvent.prototype));
+console.log(
+  "ScheduledEvent",
+  Object.getOwnPropertyNames(ScheduledEvent.prototype),
+);
 // console.log(globalThis.MessageEvent);
 // console.log(globalThis.CloseEvent);
 // console.log(globalThis.ReadableStreamDefaultReader);
@@ -114,7 +120,10 @@ console.log("ScheduledEvent", Object.getOwnPropertyNames(ScheduledEvent));
 // console.log(globalThis.Request);
 // console.log(globalThis.Response);
 // console.log(globalThis.WebSocket);
-console.log("WebSocketPair", Object.getOwnPropertyNames(WebSocketPair));
+console.log(
+  "WebSocketPair",
+  Object.getOwnPropertyNames(WebSocketPair.prototype),
+);
 // console.log(globalThis.AbortController);
 // console.log(globalThis.AbortSignal);
 // console.log(globalThis.TextDecoder);
@@ -131,12 +140,15 @@ console.log("WebSocketPair", Object.getOwnPropertyNames(WebSocketPair));
 // console.log(globalThis.CryptoKey);
 // console.log(globalThis.CacheStorage);
 // console.log(globalThis.Cache);
-console.log("FixedLengthStream", Object.getOwnPropertyNames(FixedLengthStream));
+console.log(
+  "FixedLengthStream",
+  Object.getOwnPropertyNames(FixedLengthStream.prototype),
+);
 console.log(
   "IdentityTransformStream",
-  Object.getOwnPropertyNames(IdentityTransformStream),
+  Object.getOwnPropertyNames(IdentityTransformStream.prototype),
 );
-console.log("HTMLRewriter", Object.getOwnPropertyNames(HTMLRewriter));
+console.log("HTMLRewriter", Object.getOwnPropertyNames(HTMLRewriter.prototype));
 // console.log(globalThis.constructor);
 console.log(Object.getOwnPropertyNames(import.meta));
 
