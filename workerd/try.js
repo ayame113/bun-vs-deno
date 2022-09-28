@@ -90,11 +90,11 @@ console.log(navigator.userAgent);
 // console.log(globalThis.structuredClone);
 // console.log(globalThis.fetch);
 // console.log(globalThis.Event);
-console.log(ExtendableEvent);
+console.log("ExtendableEvent", Object.getOwnPropertyNames(ExtendableEvent));
 // console.log(globalThis.PromiseRejectionEvent);
 // console.log(globalThis.FetchEvent);
-console.log(TraceEvent);
-console.log(ScheduledEvent);
+console.log("TraceEvent", Object.getOwnPropertyNames(TraceEvent));
+console.log("ScheduledEvent", Object.getOwnPropertyNames(ScheduledEvent));
 // console.log(globalThis.MessageEvent);
 // console.log(globalThis.CloseEvent);
 // console.log(globalThis.ReadableStreamDefaultReader);
@@ -114,7 +114,7 @@ console.log(ScheduledEvent);
 // console.log(globalThis.Request);
 // console.log(globalThis.Response);
 // console.log(globalThis.WebSocket);
-console.log(WebSocketPair);
+console.log("WebSocketPair", Object.getOwnPropertyNames(WebSocketPair));
 // console.log(globalThis.AbortController);
 // console.log(globalThis.AbortSignal);
 // console.log(globalThis.TextDecoder);
@@ -131,10 +131,13 @@ console.log(WebSocketPair);
 // console.log(globalThis.CryptoKey);
 // console.log(globalThis.CacheStorage);
 // console.log(globalThis.Cache);
-console.log(FixedLengthStream);
-console.log(IdentityTransformStream);
-console.log(HTMLRewriter === null);
+console.log("FixedLengthStream", Object.getOwnPropertyNames(FixedLengthStream));
+console.log(
+  "IdentityTransformStream",
+  Object.getOwnPropertyNames(IdentityTransformStream),
+);
+console.log("HTMLRewriter", Object.getOwnPropertyNames(HTMLRewriter));
 // console.log(globalThis.constructor);
 console.log(Object.getOwnPropertyNames(import.meta));
-console.log(env);
+
 throw new Error("end of script");
