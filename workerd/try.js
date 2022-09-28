@@ -135,6 +135,6 @@ console.log(FixedLengthStream);
 console.log(IdentityTransformStream);
 console.log(HTMLRewriter);
 // console.log(globalThis.constructor);
-console.log(import.meta);
+console.log(Object.getOwnPropertyNames(import.meta));
 console.log(env);
 throw new Error("end of script");
