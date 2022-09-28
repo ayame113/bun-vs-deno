@@ -133,7 +133,7 @@ console.log(WebSocketPair);
 // console.log(globalThis.Cache);
 console.log(FixedLengthStream);
 console.log(IdentityTransformStream);
-console.log(HTMLRewriter);
+console.log(HTMLRewriter === null);
 // console.log(globalThis.constructor);
 console.log(Object.getOwnPropertyNames(import.meta));
 console.log(env);
