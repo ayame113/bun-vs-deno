@@ -152,4 +152,9 @@ console.log("HTMLRewriter", Object.getOwnPropertyNames(HTMLRewriter.prototype));
 // console.log(globalThis.constructor);
 console.log(Object.getOwnPropertyNames(import.meta));
 
-throw new Error("end of script");
+export default {
+  fetch(req, env) {
+    console.log(req, env);
+    return new Response("Hello world!");
+  },
+};

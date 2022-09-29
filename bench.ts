@@ -21,13 +21,17 @@ const bench = [
 ];
 
 const commands = [
-  { dir: "node", command: ["node", "--experimental-import-meta-resolve"] },
-  { dir: "deno", command: ["deno", "run", "--allow-all", "--unstable"] },
-  { dir: "bun", command: ["bun", "run"] },
+  {
+    glob: "./node/**",
+    command: ["node", "--experimental-import-meta-resolve"],
+  },
+  { glob: "./deno/**", command: ["deno", "run", "--allow-all", "--unstable"] },
+  { glob: "./bun/**", command: ["bun", "run"] },
+  { glob: "./workerd/**.capnp", command: ["workerd", "serve", "--verbose"] },
 ];
 
-for (const { dir, command } of commands) {
-  for await (const file of expandGlob(`./${dir}/**`)) {
+for (const { glob, command } of commands) {
+  for await (const file of expandGlob(glob)) {
     if (!file.isFile) {
       continue;
     }
