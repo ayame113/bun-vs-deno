@@ -154,7 +154,7 @@ console.log(Object.getOwnPropertyNames(import.meta));
 
 export default {
   fetch(req, env) {
-    console.log(req, env);
+    // console.log(req, env);
     return new Response("Hello world!");
   },
 };
