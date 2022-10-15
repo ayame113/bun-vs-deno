@@ -40,7 +40,7 @@ for (const { glob, command } of commands) {
     const server = run([...command, file.path]);
 
     await delay(10000);
-    await run(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
+    // await run(["curl", "-i", "-s", "http://127.0.0.1:4544/"]);
     console.log("");
     await run(bench);
 
@@ -49,7 +49,7 @@ for (const { glob, command } of commands) {
 }
 
 function run(args: string[]) {
-  console.log(args);
+  console.log(">", args.join(" "));
   const ac = new AbortController();
   const p = Deno.spawn(args[0], {
     args: args.slice(1),
