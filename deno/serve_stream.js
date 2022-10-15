@@ -5,7 +5,7 @@ Deno.serve((req) => {
     new ReadableStream({
       pull(controller) {
         controller.enqueue(message);
-        if (100000 < i++) {
+        if (10000 < i++) {
           controller.close();
         }
       },
