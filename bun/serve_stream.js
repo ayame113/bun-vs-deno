@@ -1,3 +1,5 @@
+const message = new TextEncoder().encode("Hello World");
+
 export default {
   port: 4544,
   fetch(req) {
@@ -5,12 +7,12 @@ export default {
     return new Response(
       new ReadableStream({
         pull(controller) {
-          controller.enqueue("Hello World");
+          controller.enqueue(message);
           if (i++ < 100000) {
             controller.close();
           }
         },
-      }).pipeThrough(new TextEncoderStream()),
+      }),
     );
   },
 };
